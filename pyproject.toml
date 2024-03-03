@@ -1,33 +1,15 @@
-[build-system]
-requires = ["poetry-core>=1.2.0", "wheel",]
-build-backend = "poetry.core.masonry.api"
-
-
-[tool.coverage.run]
-branch = true
-relative_files = true
-omit = [
-    ".tox/*",
-    "tests/*",
-]
-
-
 [tool.poetry]
-name = "project-name"
+name = "runner"
 version = "0.1.0"
-description = "A template Poetry project structure."
-
+description = "Example inteference usage of ZeroLink"
 packages = [
-    { include = "project_name", from = "src" },
+    { include = "runner", from = "src" },
 ]
-
 authors = ["Stephen Diehl <stephen@zerolink.io>",]
 maintainers = ["Stephen Diehl <stephen@zerolink.io>",]
-
-include = ["CHANGELOG.md", "LICENSE", "py.typed",]
+include = ["CHANGELOG.md", "LICENSE", "README.md", "py.typed",]
 license = "Apache-2.0"
 readme = "README.md"
-
 homepage = "https://pypi.org/project/project-name/"
 repository = "https://github.com/zerolink.io/project-name"
 documentation = "https://docs.zerolink.io"
@@ -36,7 +18,6 @@ keywords = [
     "python3",
 ]
 classifiers = [
-    "Development Status :: 3 - Beta",
     "License :: OSI Approved :: Apache Software License",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3.8",
@@ -50,7 +31,26 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = "^3.8.1"
+python = ">3.8,<3.12"
+black = "^24.2.0"
+
+[tool.poetry.group.mlx]
+optional = true
+
+[tool.poetry.group.vllm]
+optional = true
+
+[tool.poetry.group.llamacpp]
+optional = true
+
+[tool.poetry.group.mlx.dependencies]
+mlx = "^0.5.0"
+
+[tool.poetry.group.vllm.dependencies]
+vllm = "^0.3.3"
+
+[tool.poetry.group.llamacpp.dependencies]
+llama-cpp-python = "^0.2.55"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -64,6 +64,19 @@ mypy = "^1.8.0"
 target-version = ['py39']
 exclude = '.venv'
 
+
+[build-system]
+requires = ["poetry-core>=1.2.0", "wheel",]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.coverage.run]
+branch = true
+relative_files = true
+omit = [
+    ".tox/*",
+    "tests/*",
+]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
