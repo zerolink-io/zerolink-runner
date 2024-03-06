@@ -1,4 +1,4 @@
-# ZeroLik
+# ZeroLink
 
 Example usage of how to run ZeroLink text to SQL models on various inference
 frameworks.
