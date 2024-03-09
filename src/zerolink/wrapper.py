@@ -4,7 +4,7 @@ from typing import Optional
 def to_sql(
     question: str,
     context: Optional[str] = None,
-    model_name: Optional[str] = "zerolink/zsql-en-postgres",
+    model_name: str = "zerolink/zsql-en-postgres",
     framework: Optional[str] = "mlx",
 ) -> str:
     """
@@ -22,4 +22,4 @@ def to_sql(
 
     model = ModelRunner(model_name)
     model.setup()
-    return model.predict(context, question)
+    return model.predict(question, context=context)

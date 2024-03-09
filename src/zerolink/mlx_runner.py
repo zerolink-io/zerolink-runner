@@ -1,5 +1,6 @@
 import textwrap
-from mlx_lm import load, generate
+from typing import Optional
+from mlx_lm import load
 
 
 class ModelRunner(object):
@@ -7,16 +8,16 @@ class ModelRunner(object):
     Model evaluation using MLX.
     """
 
-    def __init__(self, model_name, quantized=False, max_tokens=1024, num_beams=4):
+    def __init__(self, model_name: str, quantized=False, max_tokens=1024, num_beams=4):
         self.model_name = model_name
         self.quantized = quantized
         self.max_tokens = max_tokens
         self.system = "Translate English to Postgres SQL."
 
-    def setup(self):
+    def setup(self) -> None:
         self.model, self.tokenizer = load(self.model_name)
 
-    def predict(self, context, inputs):
+    def predict(self, inputs: str, context: Optional[str] = "") -> str:
         prompt = textwrap.dedent(
             f"""
         Using the schema:

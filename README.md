@@ -23,8 +23,11 @@ pip install 'zerolink[mlx] @ git+https://github.com/zerolink-io/zerolink-runner.
 poetry install --with mlx
 ```
 
-Then you can use the `to_sql` function to convert a natural language question,
-optionally pass the `context` parameter to provide schema information.
+You will need a system with at least 20GB of memory and 15GB of free disk space
+to install the model locally.
+
+You can use the `to_sql` function to convert a natural language question into
+SQL. Optionally pass the `context` parameter to provide schema information.
 
 ```python
 from zerolink import to_sql
@@ -43,6 +46,15 @@ pip install 'zerolink[vllm] @ git+https://github.com/zerolink-io/zerolink-runner
 poetry install --with vllm
 ```
 
+Supported GPUs:
+
+- Nvidia T4
+- Nvidia A40
+- Nvidia A100 (40GB / 80GB)
+- Nvidia H100
+
+To run the model inference on the GPU, you can use the following code:
+
 ```python
 from zerolink import to_sql
 
@@ -58,6 +70,8 @@ dependency group with one of the following command:
 pip install 'zerolink[llamacpp] @ git+https://github.com/zerolink-io/zerolink-runner.git'
 poetry install --with llamacpp
 ```
+
+To run the model inference on a CPU, you can use the following code:
 
 ```python
 from zerolink import to_sql

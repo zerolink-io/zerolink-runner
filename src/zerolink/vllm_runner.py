@@ -2,6 +2,7 @@ import torch
 import textwrap
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
+from typing import Optional
 
 MODEL_CACHE = "model-cache"
 TOKEN_CACHE = "token-cache"
@@ -12,14 +13,14 @@ class ModelRunner(object):
     Model evaluation using VLLM.
     """
 
-    def __init__(self, model_name, quantized=False, max_tokens=1024, num_beams=4):
+    def __init__(self, model_name: str, quantized=False, max_tokens=1024, num_beams=4):
         self.model_name = model_name
         self.quantized = quantized
         self.max_tokens = max_tokens
         self.num_beams = num_beams
         self.system = "Translate English to Postgres SQL."
 
-    def setup(self):
+    def setup(self) -> None:
         self.tokenizer = AutoTokenizer.from_pretrained(
             self.model_name, cache_dir=TOKEN_CACHE
         )
@@ -36,7 +37,7 @@ class ModelRunner(object):
             temperature=0,
         )
 
-    def predict(self, context, inputs):
+    def predict(self, inputs: str, context: Optional[str] = "") -> str:
         prompt = textwrap.dedent(
             f"""
         Using the schema:

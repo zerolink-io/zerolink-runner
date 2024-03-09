@@ -1,5 +1,5 @@
 # Changelog
 
-## [0.1.0] - YYYY-MM-DD
+## [0.1.0] - 2024-03-09
 
-This is the initial version of the project.
+- Initial release
