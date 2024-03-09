@@ -7,6 +7,10 @@ frameworks.
 * VLLM ( Nvidia GPUs )
 * llama.cpp ( CPU )
 
+## Using an Nvidia GPU
+
+This library is tested against Python 3.8+, PyTorch 1.11.
+
 ## License
 
 This project is licensed under the Apache License - see

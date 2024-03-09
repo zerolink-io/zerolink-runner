@@ -1,51 +1,59 @@
 import torch
+import textwrap
 from transformers import AutoTokenizer
 from vllm import LLM, SamplingParams
 
+MODEL_CACHE = "model-cache"
+TOKEN_CACHE = "token-cache"
 
-def run_vllm(model_name, inputs, quantized=False, max_tokens=1024, num_beams=4):
+
+class ModelRunner(object):
     """
-    Run the given model using vllm and return the generated text.
+    Model evaluation using VLLM.
     """
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
 
-    system = "Translate English to Postgres SQL."
-    prompt = f"Generate SQL for the following question: {inputs}"
+    def __init__(self, model_name, quantized=False, max_tokens=1024, num_beams=4):
+        self.model_name = model_name
+        self.quantized = quantized
+        self.max_tokens = max_tokens
+        self.num_beams = num_beams
+        self.system = "Translate English to Postgres SQL."
 
-    message = [
-        {"role": "system", "content": system},
-        {"role": "user", "content": prompt},
-    ]
-
-    prompt = tokenizer.apply_chat_template(
-        message, add_generation_prompt=True, tokenize=False
-    )
-
-    if quantized:
-        llm = LLM(
-            model=model_name,
-            tensor_parallel_size=torch.cuda.device_count(),
-            quantization="AWQ",
+    def setup(self):
+        self.tokenizer = AutoTokenizer.from_pretrained(
+            self.model_name, cache_dir=TOKEN_CACHE
         )
-    else:
-        llm = LLM(
-            model=model_name,
+        self.model = LLM(
+            model=self.model_name,
             tensor_parallel_size=torch.cuda.device_count(),
         )
+        self.params = SamplingParams(
+            n=1,
+            best_of=self.num_beams,
+            use_beam_search=True,
+            stop_token_ids=[self.tokenizer.eos_token_id],
+            max_tokens=self.max_tokens,
+            temperature=0,
+        )
 
-    sampling_params = SamplingParams(
-        # n=1,
-        # best_of=num_beams,
-        # use_beam_search=True,
-        # stop_token_ids=[tokenizer.eos_token_id],
-        max_tokens=max_tokens,
-        temperature=0.1,
-    )
+    def predict(self, context, inputs):
+        prompt = textwrap.dedent(
+            f"""
+        Using the schema:
+        {context}
+        Generate SQL for the following question: {inputs}
+        """
+        ).strip()
 
-    outputs = llm.generate(prompt, sampling_params)
-    generated_text = outputs[0].outputs[0].text
-    print(outputs[0].outputs[0])
-    return generated_text
+        message = [
+            {"role": "system", "content": self.system},
+            {"role": "user", "content": prompt},
+        ]
 
+        prompt = self.tokenizer.apply_chat_template(
+            message, add_generation_prompt=True, tokenize=False
+        )
 
-print(run_vllm("zerolink/zsql-en-postgres", "What are the best selling products?"))
+        outputs = self.model.generate(prompt, self.params, use_tqdm=False)
+        generated_text = outputs[0].outputs[0].text
+        return generated_text

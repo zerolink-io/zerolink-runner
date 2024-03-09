@@ -1,9 +1,9 @@
 [tool.poetry]
-name = "runner"
+name = "zerolink"
 version = "0.1.0"
 description = "Example inteference usage of ZeroLink"
 packages = [
-    { include = "runner", from = "src" },
+    { include = "zerolink", from = "src" },
 ]
 authors = ["Stephen Diehl <stephen@zerolink.io>",]
 maintainers = ["Stephen Diehl <stephen@zerolink.io>",]
@@ -48,6 +48,8 @@ mlx = "^0.6.0"
 
 [tool.poetry.group.vllm.dependencies]
 vllm = "^0.3.3"
+torch = ">2.0.1"
+transformers = "^4.38.2"
 
 [tool.poetry.group.llamacpp.dependencies]
 llama-cpp-python = "^0.2.55"
