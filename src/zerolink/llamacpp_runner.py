@@ -32,7 +32,7 @@ class ModelRunner(object):
                 "-L",
                 url,
                 "-o",
-                self.model_folder,
+                os.path.join(self.model_folder, self.gguf_name),
             ]
         )
 
