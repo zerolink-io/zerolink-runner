@@ -27,7 +27,7 @@ class ModelRunner(object):
         self.model = LLM(
             model=self.model_name,
             tensor_parallel_size=torch.cuda.device_count(),
-            log_stats=False,
+            disable_log_stats=True,
         )
         self.params = SamplingParams(
             n=1,
