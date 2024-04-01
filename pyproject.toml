@@ -50,7 +50,7 @@ mlx-lm = "^0.5.0"
 [tool.poetry.group.vllm.dependencies]
 vllm = "^0.4.0"
 torch = ">2.0.1"
-transformers = "^4.39.1"
+transformers = "^4.39.2"
 
 [tool.poetry.group.llamacpp.dependencies]
 llama-cpp-python = "^0.2.57"
