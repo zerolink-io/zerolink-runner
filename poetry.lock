@@ -3110,15 +3110,15 @@ test = ["Cython (>=0.29.36,<0.30.0)", "aiohttp (==3.9.0b0)", "aiohttp (>=3.8.1)"
 
 [[package]]
 name = "vllm"
-version = "0.4.0"
+version = "0.4.0.post1"
 description = "A high-throughput and memory-efficient inference and serving engine for LLMs"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "vllm-0.4.0-cp310-cp310-manylinux1_x86_64.whl", hash = "sha256:84360b2f15e432185ebb6079e25a4b8d5631c8fde8596deacaaa57a42bfdee57"},
-    {file = "vllm-0.4.0-cp311-cp311-manylinux1_x86_64.whl", hash = "sha256:69ce98bba1ad1c2174b4eb98502fb80181f1fcb7653551c512662da59cb18d8c"},
-    {file = "vllm-0.4.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:dcabb58a29a68d4e216733a3e7ff71705e9ddee4556aa2354c2fa9860a0d3da2"},
-    {file = "vllm-0.4.0-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:684286cbf447df76bcebc2fa0bceff98366db7b9eced4f3b27437647720d39ed"},
+    {file = "vllm-0.4.0.post1-cp310-cp310-manylinux1_x86_64.whl", hash = "sha256:ea4ced35b5166fcb5dd6d412843673a687ab9171dc5275ee5f6989ae71bb4d00"},
+    {file = "vllm-0.4.0.post1-cp311-cp311-manylinux1_x86_64.whl", hash = "sha256:5e947cd4f5c6397a1b7386e1d1e7b5e0b093f5385953218905333dd672e30ec7"},
+    {file = "vllm-0.4.0.post1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:c941b640184ce8217f229a3e24b9d8ee8f2fff11a2928fd96242e4d031cf3ba5"},
+    {file = "vllm-0.4.0.post1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:d68a051cd7363bcc6bc35924518812e2ec0a3e325489c5a03791ae8400c0bfa3"},
 ]
 
 [package.dependencies]
