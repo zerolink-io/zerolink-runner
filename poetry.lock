@@ -1048,21 +1048,21 @@ traitlets = "*"
 
 [[package]]
 name = "mlx"
-version = "0.10.0"
+version = "0.11.0"
 description = "A framework for machine learning on Apple silicon."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlx-0.10.0-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:f22afada0dda7bec3654fbf36fe182dc2bc7cc5eaf64104c3aea6e540dedd36b"},
-    {file = "mlx-0.10.0-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:952b9f1a5081ffcc0f26e8abab4630b6f3e4260a215055ffe32ffd6e2c61ccc3"},
-    {file = "mlx-0.10.0-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:c5f60d8e7ffdf16912b05f1843a9a89424df1d3bdfe9c59479e7cb8697ea91f9"},
-    {file = "mlx-0.10.0-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:8aa0b97e9aa8a191664f9d6dc88f58c46acac0d3fe711f3a9a928315102d8e79"},
-    {file = "mlx-0.10.0-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:760bb7cbc9f092ffcc81e850db6a50326dfabfb21ac0e0149e2c8ade857f89ad"},
-    {file = "mlx-0.10.0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:94447afc255f454f15b17ddf437a5f8b5c19cd30e24d34895cef2e92bfc80f86"},
-    {file = "mlx-0.10.0-cp38-cp38-macosx_13_0_arm64.whl", hash = "sha256:fdb6a46631d6a0714c0d75f2323c8dddd678ebbc2633e11a446820cb8f629c47"},
-    {file = "mlx-0.10.0-cp38-cp38-macosx_14_0_arm64.whl", hash = "sha256:47789a2e18f4b45f9b7bc8cf43fd9c49cc5825fe686310c6bb12c58607b41e7f"},
-    {file = "mlx-0.10.0-cp39-cp39-macosx_13_0_arm64.whl", hash = "sha256:650aab08e6162bea06548697e5f87faf987effa5c823ceb9643a3ee4efa450fb"},
-    {file = "mlx-0.10.0-cp39-cp39-macosx_14_0_arm64.whl", hash = "sha256:da13dd685ab7de65b4f705cb39d97fb1d28ab506a9b79655d16ce45695801baf"},
+    {file = "mlx-0.11.0-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:ca6ace960f35fcb69a22f4afe4194ca9bf71fb8da9d3b85b9c2b15ca374b68d6"},
+    {file = "mlx-0.11.0-cp310-cp310-macosx_14_0_arm64.whl", hash = "sha256:31abf5d9be428e1a475a59d439bbf67d23b5e57f057bf0d98088a8d729621064"},
+    {file = "mlx-0.11.0-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:dbf14cd6f00c5c9d1bb6719b27892c073886bc6c9cbe6d68fc43c909eda4153a"},
+    {file = "mlx-0.11.0-cp311-cp311-macosx_14_0_arm64.whl", hash = "sha256:3d5f3c6d227306fd116782d20dd3ad049728214a1eb9dc9896b00fba62bbe6a8"},
+    {file = "mlx-0.11.0-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:ca722c6209304183c7b118147fb1bd59fddf7721dd55af0733c8de6a9c81748a"},
+    {file = "mlx-0.11.0-cp312-cp312-macosx_14_0_arm64.whl", hash = "sha256:d0337873f2a3fe8cfc2c1bba80f5a625c2b18ca3964d200cff23b3eb18efe2bd"},
+    {file = "mlx-0.11.0-cp38-cp38-macosx_13_0_arm64.whl", hash = "sha256:2044c95844de000146ae8525ae69a5df6f20bc668a67300144ff08e8dcea5e94"},
+    {file = "mlx-0.11.0-cp38-cp38-macosx_14_0_arm64.whl", hash = "sha256:8ade8b30ee83374a9b7b142d1be0415559bca45ee47e086a23a60673285518e4"},
+    {file = "mlx-0.11.0-cp39-cp39-macosx_13_0_arm64.whl", hash = "sha256:b5704abc8a2baa29a5963d137cc103a28b527e0ea1726b0692e8f117aeeee198"},
+    {file = "mlx-0.11.0-cp39-cp39-macosx_14_0_arm64.whl", hash = "sha256:c9a202203a5f1cf5213a0907d469a9a56f983ea80503dc34a7b0ceaa22795908"},
 ]
 
 [package.extras]
@@ -3361,4 +3361,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">3.8,<3.12"
-content-hash = "60902b9384e5aa84cf34dabe48a9da58c862a9e03ddd3147cfaf1d1261a2d062"
+content-hash = "22fa6e843d13547e67a64f047e7f492740147300b942f6fce6d1c9b9a3c986a1"
