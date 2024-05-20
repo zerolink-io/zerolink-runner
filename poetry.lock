@@ -1088,13 +1088,13 @@ testing = ["numpy", "torch"]
 
 [[package]]
 name = "mlx-lm"
-version = "0.13.0"
+version = "0.13.1"
 description = "LLMs on Apple silicon with MLX and the Hugging Face Hub"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlx_lm-0.13.0-py3-none-any.whl", hash = "sha256:4c6a9e37fd0a5c2ba902df6d3dc1247fade82bb4b0b903f64e7f97ab69896194"},
-    {file = "mlx_lm-0.13.0.tar.gz", hash = "sha256:fd3e5400a113c8e4cfa1b626f08da03676f0c9a04e92e823c963b49da01b3129"},
+    {file = "mlx_lm-0.13.1-py3-none-any.whl", hash = "sha256:3e61d7908c9101ee5f61a666f86771048ea9881827327c7652fdfb2a31a768be"},
+    {file = "mlx_lm-0.13.1.tar.gz", hash = "sha256:ff8fbc4cd13502b5a58877528c0786c833577c095f449da7c10199b507db2535"},
 ]
 
 [package.dependencies]
@@ -3389,4 +3389,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">3.8,<3.12"
-content-hash = "6a618ef7e21d154ac570d4df7926b61ed760b9b265b597fd503c639fb1e10358"
+content-hash = "59d0a184d360e3adad4194dd024eadcbba581941df4cba0281a934e1a7aa2a70"
