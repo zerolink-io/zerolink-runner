@@ -911,12 +911,12 @@ regex = ["regex"]
 
 [[package]]
 name = "llama-cpp-python"
-version = "0.2.75"
+version = "0.2.76"
 description = "Python bindings for the llama.cpp library"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "llama_cpp_python-0.2.75.tar.gz", hash = "sha256:aee9383935c42e812ee84265b1dafe5f0e3a20ee47216529b64a2ed6caaaed44"},
+    {file = "llama_cpp_python-0.2.76.tar.gz", hash = "sha256:a4e2ab6b74dc87f565a21e4f1617c030f92d5b341375d7173876d238613a50ab"},
 ]
 
 [package.dependencies]
@@ -3388,4 +3388,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">3.8,<3.12"
-content-hash = "1121f854d0051913edd5ce3b00d1e79c8e280454795c6881842370cfed118051"
+content-hash = "27034678de6de0e5fa57ba2e9d9350d187e6eff186ccf48678954334a1cd80b2"
