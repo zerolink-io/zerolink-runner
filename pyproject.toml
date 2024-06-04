@@ -60,7 +60,7 @@ llama-cpp-python = "^0.2.77"
 black = {extras = ["jupyter"], version = "^24.4.2"}
 pytest = "^8.2.1"
 pytest-cov = "^5.0.0"
-ruff = "^0.4.6"
+ruff = "^0.4.7"
 mypy = "^1.10.0"
 
 [tool.black]
