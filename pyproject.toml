@@ -44,7 +44,7 @@ optional = true
 optional = true
 
 [tool.poetry.group.mlx.dependencies]
-mlx = "^0.15.1"
+mlx = "^0.15.2"
 mlx-lm = "^0.15.0"
 
 [tool.poetry.group.vllm.dependencies]
