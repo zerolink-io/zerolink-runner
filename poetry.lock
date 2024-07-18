@@ -1089,13 +1089,13 @@ testing = ["numpy", "torch"]
 
 [[package]]
 name = "mlx-lm"
-version = "0.15.2"
+version = "0.15.3"
 description = "LLMs on Apple silicon with MLX and the Hugging Face Hub"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "mlx_lm-0.15.2-py3-none-any.whl", hash = "sha256:56c6f88893647f89af61490f37cadd3f550ad69596709409ba6d415b132644b9"},
-    {file = "mlx_lm-0.15.2.tar.gz", hash = "sha256:7bdd5835f847432933f48b0a95687a705138fecb50218965cfe948f321311018"},
+    {file = "mlx_lm-0.15.3-py3-none-any.whl", hash = "sha256:96feebd634fb00c6dee4c4524d140ed4a7237441b16da96d51c93cffdacbae0d"},
+    {file = "mlx_lm-0.15.3.tar.gz", hash = "sha256:418864161cf0e5f074ac27ea11358fc27dffdbb3787680ed9c53f34fa41493e6"},
 ]
 
 [package.dependencies]
@@ -1104,7 +1104,7 @@ mlx = ">=0.14.1"
 numpy = "*"
 protobuf = "*"
 pyyaml = "*"
-transformers = ">=4.39.3"
+transformers = {version = ">=4.39.3", extras = ["sentencepiece"]}
 
 [package.extras]
 testing = ["datasets"]
@@ -2950,10 +2950,12 @@ filelock = "*"
 huggingface-hub = ">=0.23.2,<1.0"
 numpy = ">=1.17,<2.0"
 packaging = ">=20.0"
+protobuf = {version = "*", optional = true, markers = "extra == \"sentencepiece\""}
 pyyaml = ">=5.1"
 regex = "!=2019.12.17"
 requests = "*"
 safetensors = ">=0.4.1"
+sentencepiece = {version = ">=0.1.91,<0.1.92 || >0.1.92", optional = true, markers = "extra == \"sentencepiece\""}
 tokenizers = ">=0.19,<0.20"
 tqdm = ">=4.27"
 
@@ -3394,4 +3396,4 @@ test = ["big-O", "jaraco.functools", "jaraco.itertools", "jaraco.test", "more-it
 [metadata]
 lock-version = "2.0"
 python-versions = ">3.8,<3.12"
-content-hash = "b2d683ee71e06489d1a9a0eefdd7ecba212f24e68b2d8179ad1db9c1fab9da89"
+content-hash = "843cada4a68264781a941a33850ad7e88dc5dc75bf26c11035b4e694a59d900c"
