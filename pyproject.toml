@@ -53,7 +53,7 @@ torch = ">2.0.1"
 transformers = "^4.42.4"
 
 [tool.poetry.group.llamacpp.dependencies]
-llama-cpp-python = "^0.2.82"
+llama-cpp-python = "^0.2.83"
 
 
 [tool.poetry.group.dev.dependencies]
